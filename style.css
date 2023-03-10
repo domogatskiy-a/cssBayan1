@@ -1,5 +1,51 @@
+:root {
+  --color-control: black;
+  --color-background: beige;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body{
+  background-color: var(--color-background);
+}
+
+.bayan{
+  margin: 0 auto;
+  width: 50em;
+  
+}
+
+.control{
+  display: flex;
+  justify-content: space-between;
+}
+
+.control-decorate{
+  transition: .3s;
+  margin: .5em;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-between;
+  width: 1em;
+  height: 1em;
+  background-color: var(--color-control);  
+}
+
+.corner{
+  height: 40%;
+  width: 40%;
+  background-color: var(--color-background); 
+}
+
+.control:hover{
+  cursor: pointer;
+}
+
+.control:hover .control-decorate{
+  transform: rotate(45deg);
 }
