@@ -1,6 +1,10 @@
 :root {
   --color-control: black;
+  --color-title: blue;
+  --color-text: black;
   --color-background: beige;
+  --color-border: grey;
+  --size-borde: calc(1em / 16);
 }
 
 * {
@@ -10,18 +14,38 @@
 }
 
 body{
+  box-sizing: border-box;
   background-color: var(--color-background);
+  color: var(--color-control-text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: .625em;
 }
 
 .bayan{
   margin: 0 auto;
-  width: 50em;
-  
+  width: 30em;  
 }
 
+h1{
+  margin-block-end: 0;
+  padding: .3em;
+}
+
+h1,
+.picture{
+  border-bottom: var(--size-borde) solid var(--color-border);
+}
+
+.bayan-check{
+  width: 0;
+  height: 0;
+  padding: 0;
+}
 .control{
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .control-decorate{
@@ -46,6 +70,50 @@ body{
   cursor: pointer;
 }
 
-.control:hover .control-decorate{
+/*.control:hover .control-decorate{
   transform: rotate(45deg);
+}*/
+
+.title{
+  color: var(--color-title);
+}
+
+#bayan1:checked ~ .control .title,
+#bayan2:checked ~ .control .title,
+#bayan3:checked ~ .control .title,
+#bayan4:checked ~ .control .title,
+#bayan5:checked ~ .control .title{
+  color: var(--color-text);
+}
+
+#bayan1:checked ~ .control .control-decorate,
+#bayan2:checked ~ .control .control-decorate,
+#bayan3:checked ~ .control .control-decorate,
+#bayan4:checked ~ .control .control-decorate,
+#bayan5:checked ~ .control .control-decorate{
+  transform: rotate(45deg);
+}
+
+
+#bayan1:checked ~ .picture-img,
+#bayan2:checked ~ .picture-img,
+#bayan3:checked ~ .picture-img,
+#bayan4:checked ~ .picture-img,
+#bayan5:checked ~ .picture-img{
+  display: block;
+  width: 28em;
+  height: 100%;
+  padding: 1em 0;
+  margin: 0 auto;
+  transform:scaleX(1);
+}
+
+.picture-img{
+  display: block;
+  width: 0;
+  height: 0;
+  padding: 0 0 1em 0;
+  margin: 0 auto;
+  transform: scaleX(0);
+  transition: all 0.7s ease-in-out;
 }
