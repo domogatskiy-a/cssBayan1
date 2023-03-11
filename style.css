@@ -103,9 +103,6 @@ h1,
 }
 
 @media (hover: hover)  { 
-  .bayan-container h1{
-    color: red;
-  }
   .bayan-label:hover{
     cursor: pointer;
   }
@@ -170,4 +167,15 @@ h1,
   body{
     font-size: 1em;
   } 
+  .bayan{
+    width: 45em;  
+  }
+}
+@media (min-width: 1920px) {
+  body{
+    font-size: 1.5em;
+  } 
+  .bayan{
+    width: 50em;  
+  }
 }
