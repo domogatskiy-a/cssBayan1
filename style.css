@@ -66,14 +66,6 @@ h1,
   background-color: var(--color-background); 
 }
 
-.control:hover{
-  cursor: pointer;
-}
-
-/*.control:hover .control-decorate{
-  transform: rotate(45deg);
-}*/
-
 .title{
   color: var(--color-title);
 }
@@ -85,15 +77,6 @@ h1,
 #bayan5:checked ~ .control .title{
   color: var(--color-text);
 }
-
-#bayan1:checked ~ .control .control-decorate,
-#bayan2:checked ~ .control .control-decorate,
-#bayan3:checked ~ .control .control-decorate,
-#bayan4:checked ~ .control .control-decorate,
-#bayan5:checked ~ .control .control-decorate{
-  transform: rotate(45deg);
-}
-
 
 #bayan1:checked ~ .picture-img,
 #bayan2:checked ~ .picture-img,
@@ -116,4 +99,69 @@ h1,
   margin: 0 auto;
   transform: scaleX(0);
   transition: all 0.7s ease-in-out;
+}
+
+@media (hover: hover)  { 
+  .bayan-container h1{
+    color: red;
+  }
+  .bayan-label:hover{
+    cursor: pointer;
+  }
+  .bayan-label:hover .picture-img{
+    display: block;
+    width: 28em;
+    height: 100%;
+    padding: 1em 0;
+    margin: 0 auto;
+    transform:scaleX(1);
+    transition: .2s;
+  }
+  .bayan-container:hover .control-decorate{
+    transform: scaleX(1);
+  }
+  .control-decorate{
+    transform: scaleX(0);
+  }
+  .bayan-container:hover #bayan1:checked ~ .control .control-decorate,
+  .bayan-container:hover #bayan2:checked ~ .control .control-decorate,
+  .bayan-container:hover #bayan3:checked ~ .control .control-decorate,
+  .bayan-container:hover #bayan4:checked ~ .control .control-decorate,
+  .bayan-container:hover #bayan5:checked ~ .control .control-decorate{
+    transform: rotate(45deg);
+  }
+  .bayan-label:hover .control .control-decorate{
+    transform: rotate(45deg);
+  }
+  .bayan-container:hover .title{
+    color: var(--color-text); 
+  }
+}
+
+@media (hover: none)  { 
+  #bayan1:checked ~ .control .control-decorate,
+  #bayan2:checked ~ .control .control-decorate,
+  #bayan3:checked ~ .control .control-decorate,
+  #bayan4:checked ~ .control .control-decorate,
+  #bayan5:checked ~ .control .control-decorate{
+    transform: rotate(45deg);
+  }
+  .title{
+    color: var(--color-text); 
+  }
+}
+
+.bayan-label:active #bayan1:checked ~ .control .title,
+.bayan-label:active #bayan2:checked ~ .control .title,
+.bayan-label:active #bayan3:checked ~ .control .title,
+.bayan-label:active #bayan4:checked ~ .control .title,
+.bayan-label:active #bayan5:checked ~ .control .title,
+.bayan-label:active .title{
+  color: var(--color-title);
+}
+.bayan-label:active .picture-img{
+  opacity: .8;
+}
+.bayan-label:active .control-decorate{
+  background-color: var(--color-title);
 }
