@@ -13,6 +13,7 @@
   box-sizing: border-box;
 }
 
+
 body{
   box-sizing: border-box;
   background-color: var(--color-background);
@@ -164,4 +165,9 @@ h1,
 }
 .bayan-label:active .control-decorate{
   background-color: var(--color-title);
+}
+@media (min-width: 820px) {
+  body{
+    font-size: 1em;
+  } 
 }
